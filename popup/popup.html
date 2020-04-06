@@ -1,0 +1,336 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>History remove </title>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Baloo Da 2', cursive;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        html {
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            -webkit-box-sizing: inherit;
+            -moz-box-sizing: inherit;
+            box-sizing: inherit;
+        }
+
+        b {
+            position: relative;
+            display: block;
+            font-family: helvetica neue, helvetica, sans-serif;
+            line-height: 1.15em;
+            margin-top: -1.15em;
+            top: 2.3em;
+            font-size: 0.67em;
+            font-weight: 400;
+            letter-spacing: 0.025em;
+            opacity: 0.75;
+            text-align: center;
+        }
+
+        b span {
+            font-size: 0.785em;
+            font-weight: 400;
+            opacity: 0.4;
+        }
+
+        #intro {
+            width: 200px;
+            margin: 0px auto 0;
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            position: relative;
+            margin-top: 0px;
+        }
+
+        .button .bottom {
+            position: absolute;
+            left: 7px;
+            top: 7px;
+            width: 100%;
+            height: 100%;
+            background-color: #2acdc1;
+            display: block;
+            -webkit-transition: all .15s ease-out;
+            -moz-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all .15s ease-out;
+        }
+
+        .button .top {
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            padding: 24px 34px 22px 34px;
+            border: 2px solid #04049d;
+        }
+
+        .button-dark .top {
+            border: 2px solid #fff;
+        }
+
+        .button .top .label {
+            font-family: sans-serif;
+            font-weight: 600;
+            color: #04049d;
+            font-size: 12px;
+            line-height: 110%;
+            letter-spacing: 2px;
+            text-align: center;
+            text-transform: uppercase;
+            -webkit-transition: all .15s ease-out;
+            -moz-transition: all .15s ease-out;
+            -o-transition: all .15s ease-out;
+            transition: all .15s ease-out;
+        }
+
+        .button-dark .top .label {
+            color: #fff;
+        }
+
+        .button:hover .bottom {
+            left: 0;
+            top: 0;
+            background-color: #f3f3f3;
+        }
+
+        .button:hover .top .label {
+            color: #2acdc1;
+        }
+
+        .button-border {
+            position: absolute;
+            background-color: #2acdc1;
+            -webkit-transition: all .25s ease-out;
+            -moz-transition: all .25s ease-out;
+            -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+        }
+
+        .button:hover .top .button-border-left,
+        .button:hover .top .button-border-right {
+            height: calc(100% + 2px);
+        }
+
+        .button:hover .top .button-border-top,
+        .button:hover .top .button-border-bottom {
+            width: calc(100% + 2px);
+        }
+
+        .button-border-left {
+            left: -2px;
+            bottom: -2px;
+            width: 2px;
+            height: 0;
+        }
+
+        .button-border-top {
+            left: -2px;
+            top: -2px;
+            width: 0;
+            height: 2px;
+        }
+
+        .button-border-right {
+            right: -2px;
+            top: -2px;
+            width: 2px;
+            height: 0;
+        }
+
+        .button-border-bottom {
+            right: -2px;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+        }
+
+        .sk-cube-grid {
+            width: 40px;
+            height: 40px;
+            margin: 30px auto;
+        }
+
+        .sk-cube-grid .sk-cube {
+            width: 33%;
+            height: 33%;
+            background-color: #42aaf5;
+            float: left;
+            -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+            animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+        }
+
+        .sk-cube-grid .sk-cube1 {
+            -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+        }
+
+        .sk-cube-grid .sk-cube2 {
+            -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+        }
+
+        .sk-cube-grid .sk-cube3 {
+            -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s;
+        }
+
+        .sk-cube-grid .sk-cube4 {
+            -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s;
+        }
+
+        .sk-cube-grid .sk-cube5 {
+            -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+        }
+
+        .sk-cube-grid .sk-cube6 {
+            -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+        }
+
+        .sk-cube-grid .sk-cube7 {
+            -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+        }
+
+        .sk-cube-grid .sk-cube8 {
+            -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s;
+        }
+
+        .sk-cube-grid .sk-cube9 {
+            -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+        }
+
+        @-webkit-keyframes sk-cubeGridScaleDelay {
+
+            0%,
+            70%,
+            100% {
+                -webkit-transform: scale3D(1, 1, 1);
+                transform: scale3D(1, 1, 1);
+            }
+
+            35% {
+                -webkit-transform: scale3D(0, 0, 1);
+                transform: scale3D(0, 0, 1);
+            }
+        }
+
+        @keyframes sk-cubeGridScaleDelay {
+
+            0%,
+            70%,
+            100% {
+                -webkit-transform: scale3D(1, 1, 1);
+                transform: scale3D(1, 1, 1);
+            }
+
+            35% {
+                -webkit-transform: scale3D(0, 0, 1);
+                transform: scale3D(0, 0, 1);
+            }
+        }
+        .attach:visited,.attach{
+            color: orange;
+        }
+    </style>
+</head>
+
+<body style="width:500px; height: 20px!important; overflow-x: auto;">
+    <div style="text-align: center;">
+        <h1 style="color:#0887ff;font-weight: unset;">Tin nhắn đã gỡ Messenger</h1>
+        <h3 id="message">Bạn có thể xem toàn bộ những tin nhắn đã bị gỡ tại đây</h3>
+        <div id="load">
+            <div class="sk-cube-grid">
+                <div class="sk-cube sk-cube1"></div>
+                <div class="sk-cube sk-cube2"></div>
+                <div class="sk-cube sk-cube3"></div>
+                <div class="sk-cube sk-cube4"></div>
+                <div class="sk-cube sk-cube5"></div>
+                <div class="sk-cube sk-cube6"></div>
+                <div class="sk-cube sk-cube7"></div>
+                <div class="sk-cube sk-cube8"></div>
+                <div class="sk-cube sk-cube9"></div>
+            </div>
+        </div>
+        <div id="app" >
+               
+            
+        </div>    
+
+        <section id="intro">
+
+            <div id="intro-content" class="center-content">
+
+                <div class="center-content-inner">
+
+                    <div class="content-section content-section-margin">
+
+                        <div class="content-section-grid clearfix">
+
+                            <a href="#" class="button nav-link">
+
+                                <div class="bottom"></div>
+
+                                <div class="top">
+
+                                    <div class="label">Xoá toàn bộ lịch sử</div>
+
+                                    <div class="button-border button-border-left"></div>
+                                    <div class="button-border button-border-top"></div>
+                                    <div class="button-border button-border-right"></div>
+                                    <div class="button-border button-border-bottom"></div>
+
+                                </div>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <p>Make by <a href="https://www.facebook.com/KB2A.Team/" target="_blank">KB2A Team</a> with <span style="color: red;">♥</span> </p>
+    </div>
+    <script src="./j.js"></script>
+    <script src="./popup.js"></script>
+</body>
+
+</html>

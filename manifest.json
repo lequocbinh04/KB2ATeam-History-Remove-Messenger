@@ -1,0 +1,38 @@
+﻿{
+  "manifest_version": 2,
+  "name": "KB2ATeam HRM - History Remove Messages",
+  "description": "Một tiện ích giúp bạn xem tin nhắn đã gỡ trên Facebook.",
+  "version": "192.168.1.1",
+  "permissions": [
+    "*://*.facebook.com/*",
+    "*://*.messenger.com/*",
+    "storage"
+  ],
+  "externally_connectable": {
+    "matches": ["*://*.facebook.com/*", "*://*.messenger.com/*"]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.facebook.com/*", "*://*.messenger.com/*"],
+      "run_at": "document_idle",
+      "js": ["content.js","reload.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "web_accessible_resources": [
+    "hook.js",
+    "util.js"
+  ],
+  "browser_action": {
+    "default_icon": {                        
+      "32": "./facebook-new.png"            
+    },
+    "default_title": "KB2ATeam HRM",      
+    "default_popup": "popup/popup.html"       
+  },
+  "icons": { "16": "facebook-new.png", "128": "facebook-new.png" }
+}
